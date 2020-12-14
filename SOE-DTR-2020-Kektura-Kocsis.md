@@ -16,8 +16,8 @@ A modellbe két halmaz található. Az egyikbe a 3 barát került bele, a másik
 
 ` set Baratok;
 
-> param szakaszSzam;
-> set Szakaszok:=1..szakaszSzam;`
+param szakaszSzam;
+set Szakaszok:=1..szakaszSzam;`
 
 ## Paraméterek
 
@@ -39,12 +39,12 @@ Egy darab változóra van szükségem a modellhez, ami eldönti, hogy az adott s
 Három darab korlátozás készült el. Az elsőben azt korlátozzuk, hogy egy szakaszt egy ember sétáljon csak végig. A másodikban azt, hogy a tolerancia szintnél senki ne sétáljon többet, mint amennyit megadott a toleranciaMax paraméterben. És a harmadik hasonló az előzőhez, hogy senki ne sétáljon kevesebbet, mint amit megadott a toleranciaMin paraméterbe.
 
 `s.t. egySzakasztEgyEmber{sz in Szakaszok}:
-	sum{b in Baratok} setal[b,sz] = 1;
+	sum{b in Baratok} setal[b,sz] = 1;`
 
-s.t. toleranciaSzintMaxnalKevesebb{b in Baratok}:
- 	sum{sz in Szakaszok} setal[b,sz] *hossz[sz] <= toleranciaMax[b];
+`s.t. toleranciaSzintMaxnalKevesebb{b in Baratok}:
+ 	sum{sz in Szakaszok} setal[b,sz] *hossz[sz] <= toleranciaMax[b];`
 
-s.t. toleranciaSzintMinLehetseges {b in Baratok}:
+`s.t. toleranciaSzintMinLehetseges {b in Baratok}:
  	sum{sz in Szakaszok} setal[b,sz] *hossz[sz] >= toleranciaMin[b];`
 
 ## Célfüggvény
