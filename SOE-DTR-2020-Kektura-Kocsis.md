@@ -14,10 +14,10 @@ Van egy 3 főből álló baráti társaság, akik név szerint Anna, Bence és C
 
 A modellbe két halmaz található. Az egyikbe a 3 barát került bele, a másikba pedig a Kéktúra útvonalnak a szakaszai. A Szakaszok halmaz a megfelelő inicializáláshoz szükség van egy paraméterre is a szakaszSzam-ra, hogy egyszerűbben tudjuk megadni, hány szakaszunk van összesen.
 
-` set Baratok;
+` set Baratok;`
 
-param szakaszSzam;
-set Szakaszok:=1..szakaszSzam;`
+`param szakaszSzam;`
+`set Szakaszok:=1..szakaszSzam;`
 
 ## Paraméterek
 
