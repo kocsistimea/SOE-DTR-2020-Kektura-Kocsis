@@ -14,7 +14,7 @@ Van egy 3 főből álló baráti társaság, akik név szerint Anna, Bence és C
 
 A modellbe két halmaz található. Az egyikbe a 3 barát került bele, a másikba pedig a Kéktúra útvonalnak a szakaszai. A Szakaszok halmaz a megfelelő inicializáláshoz szükség van egy paraméterre is a szakaszSzam-ra, hogy egyszerűbben tudjuk megadni, hány szakaszunk van összesen.
 
-``` 
+``` amp
 set Baratok;
 
 param szakaszSzam;
@@ -25,7 +25,7 @@ set Szakaszok:=1..szakaszSzam;
 
 4+1 paraméttere van szükségem. A szakaszszámot az előbbiekben leírtam. A sebességben a 3 hallgató adja meg az átlagsebességét km/h-ba. A tolerancia max és min pedig megadja mennyit szeretnének sétálni km-be, végül pedig a hossz a Kéktúra szakaszainak a hosszát adja meg km-be.
 
-```
+```amp
 param sebesseg {Baratok};
 param toleranciaMax {Baratok} integer;
 param toleranciaMin {Baratok} integer;
@@ -36,21 +36,26 @@ param hossz {Szakaszok};
 
 Egy darab változóra van szükségem a modellhez, ami eldönti, hogy az adott szakaszt melyik barát fogja teljesíteni, ez binary értéket vesz fel.
 
-```
+```amp
 var setal{Baratok, Szakaszok}, binary;
 ```
 
 ## Korlátozások
 
-Három darab korlátozás készült el. Az elsőben azt korlátozzuk, hogy egy szakaszt egy ember sétáljon csak végig. A másodikban azt, hogy a tolerancia szintnél senki ne sétáljon többet, mint amennyit megadott a toleranciaMax paraméterben. És a harmadik hasonló az előzőhez, hogy senki ne sétáljon kevesebbet, mint amit megadott a toleranciaMin paraméterbe.
-
-```
+Ebbe azt korlátozzuk le, hogy egy szakaszt a három barát közül csak az egyikük sétálja le.
+```amp
 s.t. egySzakasztEgyEmber{sz in Szakaszok}:
 	sum{b in Baratok} setal[b,sz] = 1;
+```
 
+A toleranciaSzintMaxnalKevesebb korlátozásba, nem engedjük meg, hogy valaki többet sétáljon, mint amennyit beállított magának tolerancia maximumnak.
+```amp
 s.t. toleranciaSzintMaxnalKevesebb{b in Baratok}:
  	sum{sz in Szakaszok} setal[b,sz] *hossz[sz] <= toleranciaMax[b];
+```
 
+És a harmadik hasonló az előzőhez, hogy senki ne sétáljon kevesebbet, mint amit megadott a toleranciaMin paraméterbe.
+```amp
 s.t. toleranciaSzintMinLehetseges {b in Baratok}:
  	sum{sz in Szakaszok} setal[b,sz] *hossz[sz] >= toleranciaMin[b];
 ```
@@ -58,16 +63,16 @@ s.t. toleranciaSzintMinLehetseges {b in Baratok}:
 ## Célfüggvény
 A célfüggvényben minimalizáljuk, hogy mennyi idő alatt lehet teljesíteni a Kéktúra útvonalat.
 
-```
+```amp
 minimize OsszesenIdo:
-	sum {sz in Szakaszok, b in Baratok} setal[b,sz] * (hossz[sz]*sebesseg[b]);
+	sum {sz in Szakaszok, b in Baratok} setal[b,sz] * (hossz[sz]/sebesseg[b]);
 ```
 
 ## Kiíratás
 
 Készült egy kiíratás is, hogy sokkal olvashatóbbak legyenek a kiszámolt adatok.
 
-```
+```amp
 solve;
 printf "\n";
 for {sz in Szakaszok}
@@ -89,7 +94,7 @@ printf "\n";
 
 ## Adatok felvitele
 
-```
+```amp
 data;
 set Baratok:=
 Anna
@@ -151,7 +156,7 @@ end;
 
 ## Egy általam összerakott példa
 
-Következőkben lehet látni, hogy egy megoldást találtam ki. Anna sétálja le a szakasz első részét, egészen addig, amíg el nem éri a tolerancia szintjének a minimumát, majd így tett Bence is majd Csabi is, majd Anna fejezte be a túrát, mert tudjuk ő a leggyorsabb sétáló. Ennek az ideje 4787,5 óra.
+Következőkben lehet látni, hogy egy megoldást találtam ki. Anna sétálja le a szakasz első részét, egészen addig, amíg el nem éri a tolerancia szintjének a minimumát, majd így tett Bence is majd Csabi is, majd Anna fejezte be a túrát, mert tudjuk ő a leggyorsabb sétáló. Ennek az ideje 314,84 óra.
 
 | Szakaszok hossza  | Anna  | Bence  | Csabi |
 | :---------------: |:-----:| :-----:|:-----:|
@@ -181,13 +186,13 @@ Következőkben lehet látni, hogy egy megoldást találtam ki. Anna sétálja l
 | 54,4              | 54,4  |        |       |
 | 45,2              | 45,2  |        |       |
 |Megtett táv:(km/fő)| 574   | 328    | 270   |
-| Idő: (óra/fő)     | 1722  | 1312   | 1754  |
-|Összidő: (óra)     | 4787,7 óra            |
+| Idő: (óra/fő)     | 191   | 82     | 41,5  |
+|Összidő: (óra)     |       314,84  óra      |
 
 ## Optimális megoldás
 Az optimális megoldás 4712.2 óra. Látható is az out fájlba, hogy a rendszer nem egymás utáni szakaszokat rakott össze egy emberre, hanem tényleg megtalálva a legjobb időeredményt, figyelembe véve a sebességet, a tolerancia szintet és a szakaszok hosszát.
 
-```
+```amp
 Problem:    kektura
 Rows:       34
 Columns:    81 (81 integer, 81 binary)
@@ -198,7 +203,7 @@ Objective:  OsszesenIdo = 4712.2 (MINimum)
 
 Láthatjuk, hogy Anna a tolerancia értékének a maximumát sétálta 600 km, de ez várható volt, mert nagyon jó átlagsebességgel sétál. Ezt követően Bence is sokat sétált volna, de meg kellett adni az esélyt Csabinak is, hogy legalább a minimum értékét lesétálhassa és az összes többit Bence teljesítette.
 
-```
+```amp
 Anna	600.0 km	1800 óra
 Bence	321.8 km	1287 óra
 Csabi	250.0 km	1625 óra
@@ -206,10 +211,10 @@ Csabi	250.0 km	1625 óra
 Osszido: 4712 óra
 ```
 
-Optimális megoldás, ha maximumra állítjuk a túra teljesítésének idejét
+### Optimális megoldás, ha maximumra állítjuk a túra teljesítésének idejét
 Érdekes látni, hogy felcserélődnek a szerepek és Csabi a maximumát sétálja, míg Anna a minimumát. Bencére jut az összes többi táv, ami majdnem eléri a maximumának beállított értéket. Körülbelül 300 órával több időbe telik így teljesíteni, mint a minimumnál.
 
-```
+```amp
 Anna	350.0 km	1050 óra
 Bence	521.8 km	2087 óra
 Csabi	300.0 km	1950 óra
