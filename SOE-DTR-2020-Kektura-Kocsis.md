@@ -190,7 +190,7 @@ Következőkben lehet látni, hogy egy megoldást találtam ki. Anna sétálja l
 |Összidő: (óra)     |       314,84  óra      |
 
 ## Optimális megoldás
-Az optimális megoldás 4712.2 óra. Látható is az out fájlba, hogy a rendszer nem egymás utáni szakaszokat rakott össze egy emberre, hanem tényleg megtalálva a legjobb időeredményt, figyelembe véve a sebességet, a tolerancia szintet és a szakaszok hosszát.
+Az optimális megoldás 293,27 óra. Látható is az out fájlba, hogy a rendszer nem egymás utáni szakaszokat rakott össze egy emberre, hanem tényleg megtalálva a legjobb időeredményt, figyelembe véve a sebességet, a tolerancia szintet és a szakaszok hosszát.
 
 ```ampl
 Problem:    kektura
@@ -198,31 +198,29 @@ Rows:       34
 Columns:    81 (81 integer, 81 binary)
 Non-zeros:  324
 Status:     INTEGER OPTIMAL
-Objective:  OsszesenIdo = 4712.2 (MINimum)
+Objective:  OsszesenIdo = 293.2705128 (MINimum)
 ```
 
 Láthatjuk, hogy Anna a tolerancia értékének a maximumát sétálta 600 km, de ez várható volt, mert nagyon jó átlagsebességgel sétál. Ezt követően Bence is sokat sétált volna, de meg kellett adni az esélyt Csabinak is, hogy legalább a minimum értékét lesétálhassa és az összes többit Bence teljesítette.
 
 ```ampl
-Anna	600.0 km	1800 óra
-Bence	321.8 km	1287 óra
-Csabi	250.0 km	1625 óra
+Anna	600.0 km	200 óra
+Bence	321.8 km	80 óra
+Csabi	250.0 km	38 óra
 
-Osszido: 4712 óra
+Osszido: 293 óra
 ```
 
 ### Optimális megoldás, ha maximumra állítjuk a túra teljesítésének idejét
-Érdekes látni, hogy felcserélődnek a szerepek és Csabi a maximumát sétálja, míg Anna a minimumát. Bencére jut az összes többi táv, ami majdnem eléri a maximumának beállított értéket. Körülbelül 300 órával több időbe telik így teljesíteni, mint a minimumnál.
+Érdekes látni, hogy felcserélődnek a szerepek és Csabi a maximumát sétálja, míg Anna a minimumát. Bencére jut az összes többi táv, ami majdnem eléri a maximumának beállított értéket. Körülbelül 26 órával több időbe telik így teljesíteni, mint a minimumnál.
 
 ```ampl
-Anna	350.0 km	1050 óra
-Bence	521.8 km	2087 óra
-Csabi	300.0 km	1950 óra
+Anna	350.0 km	117 óra
+Bence	521.8 km	130 óra
+Csabi	300.0 km	46 óra
 
-Osszido: 5087 óra
+Osszido: 319 óra
 ```
-
-Érzékelhetjük, hogy a futtatás a maximum megtalálásánál sokkal gyorsabb, mint a minimumnál. Míg a minimum optimális megoldásánál az idő: 121.5 secs, addig a maximumnál csak 0.5 secs. 
 
 ## Paraméter érzékenység tesztelése
 
