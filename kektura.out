@@ -1,0 +1,253 @@
+Problem:    kektura
+Rows:       34
+Columns:    81 (81 integer, 81 binary)
+Non-zeros:  324
+Status:     INTEGER OPTIMAL
+Objective:  OsszesenIdo = 4712.2 (MINimum)
+
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 egySzakasztEgyEmber[1]
+                                   1             1             = 
+     2 egySzakasztEgyEmber[2]
+                                   1             1             = 
+     3 egySzakasztEgyEmber[3]
+                                   1             1             = 
+     4 egySzakasztEgyEmber[4]
+                                   1             1             = 
+     5 egySzakasztEgyEmber[5]
+                                   1             1             = 
+     6 egySzakasztEgyEmber[6]
+                                   1             1             = 
+     7 egySzakasztEgyEmber[7]
+                                   1             1             = 
+     8 egySzakasztEgyEmber[8]
+                                   1             1             = 
+     9 egySzakasztEgyEmber[9]
+                                   1             1             = 
+    10 egySzakasztEgyEmber[10]
+                                   1             1             = 
+    11 egySzakasztEgyEmber[11]
+                                   1             1             = 
+    12 egySzakasztEgyEmber[12]
+                                   1             1             = 
+    13 egySzakasztEgyEmber[13]
+                                   1             1             = 
+    14 egySzakasztEgyEmber[14]
+                                   1             1             = 
+    15 egySzakasztEgyEmber[15]
+                                   1             1             = 
+    16 egySzakasztEgyEmber[16]
+                                   1             1             = 
+    17 egySzakasztEgyEmber[17]
+                                   1             1             = 
+    18 egySzakasztEgyEmber[18]
+                                   1             1             = 
+    19 egySzakasztEgyEmber[19]
+                                   1             1             = 
+    20 egySzakasztEgyEmber[20]
+                                   1             1             = 
+    21 egySzakasztEgyEmber[21]
+                                   1             1             = 
+    22 egySzakasztEgyEmber[22]
+                                   1             1             = 
+    23 egySzakasztEgyEmber[23]
+                                   1             1             = 
+    24 egySzakasztEgyEmber[24]
+                                   1             1             = 
+    25 egySzakasztEgyEmber[25]
+                                   1             1             = 
+    26 egySzakasztEgyEmber[26]
+                                   1             1             = 
+    27 egySzakasztEgyEmber[27]
+                                   1             1             = 
+    28 toleranciaSzintMaxnalKevesebb[Anna]
+                                 600                         600 
+    29 toleranciaSzintMaxnalKevesebb[Bence]
+                               321.8                         600 
+    30 toleranciaSzintMaxnalKevesebb[Csabi]
+                                 250                         300 
+    31 toleranciaSzintMinLehetseges[Anna]
+                                 600           350               
+    32 toleranciaSzintMinLehetseges[Bence]
+                               321.8           300               
+    33 toleranciaSzintMinLehetseges[Csabi]
+                                 250           250               
+    34 OsszesenIdo            4712.2                             
+
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 setal[Anna,1]
+                    *              1             0             1 
+     2 setal[Bence,1]
+                    *              0             0             1 
+     3 setal[Csabi,1]
+                    *              0             0             1 
+     4 setal[Anna,2]
+                    *              0             0             1 
+     5 setal[Bence,2]
+                    *              1             0             1 
+     6 setal[Csabi,2]
+                    *              0             0             1 
+     7 setal[Anna,3]
+                    *              1             0             1 
+     8 setal[Bence,3]
+                    *              0             0             1 
+     9 setal[Csabi,3]
+                    *              0             0             1 
+    10 setal[Anna,4]
+                    *              1             0             1 
+    11 setal[Bence,4]
+                    *              0             0             1 
+    12 setal[Csabi,4]
+                    *              0             0             1 
+    13 setal[Anna,5]
+                    *              1             0             1 
+    14 setal[Bence,5]
+                    *              0             0             1 
+    15 setal[Csabi,5]
+                    *              0             0             1 
+    16 setal[Anna,6]
+                    *              0             0             1 
+    17 setal[Bence,6]
+                    *              1             0             1 
+    18 setal[Csabi,6]
+                    *              0             0             1 
+    19 setal[Anna,7]
+                    *              0             0             1 
+    20 setal[Bence,7]
+                    *              0             0             1 
+    21 setal[Csabi,7]
+                    *              1             0             1 
+    22 setal[Anna,8]
+                    *              1             0             1 
+    23 setal[Bence,8]
+                    *              0             0             1 
+    24 setal[Csabi,8]
+                    *              0             0             1 
+    25 setal[Anna,9]
+                    *              0             0             1 
+    26 setal[Bence,9]
+                    *              1             0             1 
+    27 setal[Csabi,9]
+                    *              0             0             1 
+    28 setal[Anna,10]
+                    *              0             0             1 
+    29 setal[Bence,10]
+                    *              1             0             1 
+    30 setal[Csabi,10]
+                    *              0             0             1 
+    31 setal[Anna,11]
+                    *              0             0             1 
+    32 setal[Bence,11]
+                    *              1             0             1 
+    33 setal[Csabi,11]
+                    *              0             0             1 
+    34 setal[Anna,12]
+                    *              0             0             1 
+    35 setal[Bence,12]
+                    *              1             0             1 
+    36 setal[Csabi,12]
+                    *              0             0             1 
+    37 setal[Anna,13]
+                    *              0             0             1 
+    38 setal[Bence,13]
+                    *              0             0             1 
+    39 setal[Csabi,13]
+                    *              1             0             1 
+    40 setal[Anna,14]
+                    *              0             0             1 
+    41 setal[Bence,14]
+                    *              0             0             1 
+    42 setal[Csabi,14]
+                    *              1             0             1 
+    43 setal[Anna,15]
+                    *              0             0             1 
+    44 setal[Bence,15]
+                    *              0             0             1 
+    45 setal[Csabi,15]
+                    *              1             0             1 
+    46 setal[Anna,16]
+                    *              0             0             1 
+    47 setal[Bence,16]
+                    *              0             0             1 
+    48 setal[Csabi,16]
+                    *              1             0             1 
+    49 setal[Anna,17]
+                    *              1             0             1 
+    50 setal[Bence,17]
+                    *              0             0             1 
+    51 setal[Csabi,17]
+                    *              0             0             1 
+    52 setal[Anna,18]
+                    *              1             0             1 
+    53 setal[Bence,18]
+                    *              0             0             1 
+    54 setal[Csabi,18]
+                    *              0             0             1 
+    55 setal[Anna,19]
+                    *              1             0             1 
+    56 setal[Bence,19]
+                    *              0             0             1 
+    57 setal[Csabi,19]
+                    *              0             0             1 
+    58 setal[Anna,20]
+                    *              0             0             1 
+    59 setal[Bence,20]
+                    *              0             0             1 
+    60 setal[Csabi,20]
+                    *              1             0             1 
+    61 setal[Anna,21]
+                    *              1             0             1 
+    62 setal[Bence,21]
+                    *              0             0             1 
+    63 setal[Csabi,21]
+                    *              0             0             1 
+    64 setal[Anna,22]
+                    *              0             0             1 
+    65 setal[Bence,22]
+                    *              0             0             1 
+    66 setal[Csabi,22]
+                    *              1             0             1 
+    67 setal[Anna,23]
+                    *              1             0             1 
+    68 setal[Bence,23]
+                    *              0             0             1 
+    69 setal[Csabi,23]
+                    *              0             0             1 
+    70 setal[Anna,24]
+                    *              1             0             1 
+    71 setal[Bence,24]
+                    *              0             0             1 
+    72 setal[Csabi,24]
+                    *              0             0             1 
+    73 setal[Anna,25]
+                    *              1             0             1 
+    74 setal[Bence,25]
+                    *              0             0             1 
+    75 setal[Csabi,25]
+                    *              0             0             1 
+    76 setal[Anna,26]
+                    *              0             0             1 
+    77 setal[Bence,26]
+                    *              0             0             1 
+    78 setal[Csabi,26]
+                    *              1             0             1 
+    79 setal[Anna,27]
+                    *              0             0             1 
+    80 setal[Bence,27]
+                    *              0             0             1 
+    81 setal[Csabi,27]
+                    *              1             0             1 
+
+Integer feasibility conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 1.14e-13 on row 28
+        max.rel.err = 1.89e-16 on row 28
+        High quality
+
+End of output
