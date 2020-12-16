@@ -6,7 +6,9 @@ set Szakaszok:=1..szakaszSzam;
 param sebesseg {Baratok};
 param toleranciaMax {Baratok} integer;
 param toleranciaMin {Baratok} integer;
+param toleranciaEgyTav {Baratok} ;
 param hossz {Szakaszok};
+param szabad {Baratok, Szakaszok};
 
 var setal{Baratok, Szakaszok}, binary;
 
@@ -19,8 +21,15 @@ s.t. toleranciaSzintMaxnalKevesebb{b in Baratok}:
 s.t. toleranciaSzintMinLehetseges {b in Baratok}:
 	sum{sz in Szakaszok} setal[b,sz] *hossz[sz] >= toleranciaMin[b];
 
+s.t. NeTeljesitseHaNemBirja{b in Baratok, sz in Szakaszok: hossz[sz] > toleranciaEgyTav[b]}:
+	setal[b,sz]=0;
+
+s.t. akkorSetalunkHaRaerunk {b in Baratok, sz in Szakaszok: 1> szabad[b, sz]}:
+	setal[b,sz]=0;
+
+
 minimize OsszesenIdo:
-	sum {sz in Szakaszok, b in Baratok} setal[b,sz] * (hossz[sz]*sebesseg[b]);
+	sum {sz in Szakaszok, b in Baratok} setal[b,sz] * (hossz[sz]/sebesseg[b]);
 
 solve;
 printf "\n";
@@ -34,7 +43,7 @@ for {sz in Szakaszok}
 printf "\n";
 for{b in Baratok}
 {
-    printf "%s\t%.1f km\t%d óra\n",b,sum{sz in Szakaszok} hossz[sz]*setal[b,sz], sum{sz in Szakaszok} hossz[sz]*setal[b,sz]*sebesseg[b];
+    printf "%s\t%.1f km\t%d óra\n",b,sum{sz in Szakaszok} hossz[sz]*setal[b,sz], sum{sz in Szakaszok} setal[b,sz] *(hossz[sz]/sebesseg[b]);
 }
 
 printf "\nOsszido: %d óra\n", OsszesenIdo;
@@ -67,6 +76,12 @@ Bence 300
 Csabi 250
 ;
 
+param toleranciaEgyTav:=
+Anna 70
+Bence 50
+Csabi 80
+;
+
 param hossz := 
 1 71.4
 2 72.5
@@ -96,4 +111,12 @@ param hossz :=
 26 54.4
 27 45.2
 ;
+
+
+param szabad: 	1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27:=
+Anna 			1 1 1 1 1 0 0 0 1 1  1  1  1  1  1  1  0  1  1  1  1  1  1  1  1  0  1
+Bence 			1 1 0 1 1 1 1 1 1 1  1  0  1  0  1  1  1  1  1  1  1  1  0  0  0  1  0
+Csabi 			1 1 1 0 1 1 1 1 1 1  1  0  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1
+;
+
 end;
