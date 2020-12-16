@@ -1,9 +1,9 @@
 Problem:    kektura
-Rows:       34
+Rows:       62
 Columns:    81 (81 integer, 81 binary)
-Non-zeros:  324
+Non-zeros:  352
 Status:     INTEGER OPTIMAL
-Objective:  OsszesenIdo = 4712.2 (MINimum)
+Objective:  OsszesenIdo = 311.0423077 (MINimum)
 
    No.   Row name        Activity     Lower bound   Upper bound
 ------ ------------    ------------- ------------- -------------
@@ -62,33 +62,89 @@ Objective:  OsszesenIdo = 4712.2 (MINimum)
     27 egySzakasztEgyEmber[27]
                                    1             1             = 
     28 toleranciaSzintMaxnalKevesebb[Anna]
-                                 600                         600 
+                               547.8                         600 
     29 toleranciaSzintMaxnalKevesebb[Bence]
-                               321.8                         600 
+                               337.4                         600 
     30 toleranciaSzintMaxnalKevesebb[Csabi]
-                                 250                         300 
+                               286.6                         300 
     31 toleranciaSzintMinLehetseges[Anna]
-                                 600           350               
+                               547.8           350               
     32 toleranciaSzintMinLehetseges[Bence]
-                               321.8           300               
+                               337.4           300               
     33 toleranciaSzintMinLehetseges[Csabi]
-                                 250           250               
-    34 OsszesenIdo            4712.2                             
+                               286.6           250               
+    34 NeTeljesitseHaNemBirja[Anna,1]
+                                   0            -0             = 
+    35 NeTeljesitseHaNemBirja[Anna,2]
+                                   0            -0             = 
+    36 NeTeljesitseHaNemBirja[Anna,19]
+                                   0            -0             = 
+    37 NeTeljesitseHaNemBirja[Bence,1]
+                                   0            -0             = 
+    38 NeTeljesitseHaNemBirja[Bence,2]
+                                   0            -0             = 
+    39 NeTeljesitseHaNemBirja[Bence,9]
+                                   0            -0             = 
+    40 NeTeljesitseHaNemBirja[Bence,10]
+                                   0            -0             = 
+    41 NeTeljesitseHaNemBirja[Bence,11]
+                                   0            -0             = 
+    42 NeTeljesitseHaNemBirja[Bence,18]
+                                   0            -0             = 
+    43 NeTeljesitseHaNemBirja[Bence,19]
+                                   0            -0             = 
+    44 NeTeljesitseHaNemBirja[Bence,23]
+                                   0            -0             = 
+    45 NeTeljesitseHaNemBirja[Bence,24]
+                                   0            -0             = 
+    46 NeTeljesitseHaNemBirja[Bence,25]
+                                   0            -0             = 
+    47 NeTeljesitseHaNemBirja[Bence,26]
+                                   0            -0             = 
+    48 akkorSetalunkHaRaerunk[Anna,6]
+                                   0            -0             = 
+    49 akkorSetalunkHaRaerunk[Anna,7]
+                                   0            -0             = 
+    50 akkorSetalunkHaRaerunk[Anna,8]
+                                   0            -0             = 
+    51 akkorSetalunkHaRaerunk[Anna,17]
+                                   0            -0             = 
+    52 akkorSetalunkHaRaerunk[Anna,26]
+                                   0            -0             = 
+    53 akkorSetalunkHaRaerunk[Bence,3]
+                                   0            -0             = 
+    54 akkorSetalunkHaRaerunk[Bence,12]
+                                   0            -0             = 
+    55 akkorSetalunkHaRaerunk[Bence,14]
+                                   0            -0             = 
+    56 akkorSetalunkHaRaerunk[Bence,23]
+                                   0            -0             = 
+    57 akkorSetalunkHaRaerunk[Bence,24]
+                                   0            -0             = 
+    58 akkorSetalunkHaRaerunk[Bence,25]
+                                   0            -0             = 
+    59 akkorSetalunkHaRaerunk[Bence,27]
+                                   0            -0             = 
+    60 akkorSetalunkHaRaerunk[Csabi,4]
+                                   0            -0             = 
+    61 akkorSetalunkHaRaerunk[Csabi,12]
+                                   0            -0             = 
+    62 OsszesenIdo           311.042                             
 
    No. Column name       Activity     Lower bound   Upper bound
 ------ ------------    ------------- ------------- -------------
      1 setal[Anna,1]
-                    *              1             0             1 
+                    *              0             0             1 
      2 setal[Bence,1]
                     *              0             0             1 
      3 setal[Csabi,1]
-                    *              0             0             1 
+                    *              1             0             1 
      4 setal[Anna,2]
                     *              0             0             1 
      5 setal[Bence,2]
-                    *              1             0             1 
-     6 setal[Csabi,2]
                     *              0             0             1 
+     6 setal[Csabi,2]
+                    *              1             0             1 
      7 setal[Anna,3]
                     *              1             0             1 
      8 setal[Bence,3]
@@ -96,15 +152,15 @@ Objective:  OsszesenIdo = 4712.2 (MINimum)
      9 setal[Csabi,3]
                     *              0             0             1 
     10 setal[Anna,4]
-                    *              1             0             1 
-    11 setal[Bence,4]
                     *              0             0             1 
+    11 setal[Bence,4]
+                    *              1             0             1 
     12 setal[Csabi,4]
                     *              0             0             1 
     13 setal[Anna,5]
-                    *              1             0             1 
-    14 setal[Bence,5]
                     *              0             0             1 
+    14 setal[Bence,5]
+                    *              1             0             1 
     15 setal[Csabi,5]
                     *              0             0             1 
     16 setal[Anna,6]
@@ -116,45 +172,45 @@ Objective:  OsszesenIdo = 4712.2 (MINimum)
     19 setal[Anna,7]
                     *              0             0             1 
     20 setal[Bence,7]
-                    *              0             0             1 
+                    *              1             0             1 
     21 setal[Csabi,7]
-                    *              1             0             1 
-    22 setal[Anna,8]
-                    *              1             0             1 
-    23 setal[Bence,8]
                     *              0             0             1 
+    22 setal[Anna,8]
+                    *              0             0             1 
+    23 setal[Bence,8]
+                    *              1             0             1 
     24 setal[Csabi,8]
                     *              0             0             1 
     25 setal[Anna,9]
-                    *              0             0             1 
-    26 setal[Bence,9]
                     *              1             0             1 
+    26 setal[Bence,9]
+                    *              0             0             1 
     27 setal[Csabi,9]
                     *              0             0             1 
     28 setal[Anna,10]
-                    *              0             0             1 
-    29 setal[Bence,10]
                     *              1             0             1 
+    29 setal[Bence,10]
+                    *              0             0             1 
     30 setal[Csabi,10]
                     *              0             0             1 
     31 setal[Anna,11]
-                    *              0             0             1 
-    32 setal[Bence,11]
                     *              1             0             1 
+    32 setal[Bence,11]
+                    *              0             0             1 
     33 setal[Csabi,11]
                     *              0             0             1 
     34 setal[Anna,12]
-                    *              0             0             1 
-    35 setal[Bence,12]
                     *              1             0             1 
+    35 setal[Bence,12]
+                    *              0             0             1 
     36 setal[Csabi,12]
                     *              0             0             1 
     37 setal[Anna,13]
                     *              0             0             1 
     38 setal[Bence,13]
-                    *              0             0             1 
-    39 setal[Csabi,13]
                     *              1             0             1 
+    39 setal[Csabi,13]
+                    *              0             0             1 
     40 setal[Anna,14]
                     *              0             0             1 
     41 setal[Bence,14]
@@ -164,19 +220,19 @@ Objective:  OsszesenIdo = 4712.2 (MINimum)
     43 setal[Anna,15]
                     *              0             0             1 
     44 setal[Bence,15]
-                    *              0             0             1 
-    45 setal[Csabi,15]
                     *              1             0             1 
+    45 setal[Csabi,15]
+                    *              0             0             1 
     46 setal[Anna,16]
                     *              0             0             1 
     47 setal[Bence,16]
-                    *              0             0             1 
+                    *              1             0             1 
     48 setal[Csabi,16]
-                    *              1             0             1 
-    49 setal[Anna,17]
-                    *              1             0             1 
-    50 setal[Bence,17]
                     *              0             0             1 
+    49 setal[Anna,17]
+                    *              0             0             1 
+    50 setal[Bence,17]
+                    *              1             0             1 
     51 setal[Csabi,17]
                     *              0             0             1 
     52 setal[Anna,18]
@@ -186,29 +242,29 @@ Objective:  OsszesenIdo = 4712.2 (MINimum)
     54 setal[Csabi,18]
                     *              0             0             1 
     55 setal[Anna,19]
-                    *              1             0             1 
+                    *              0             0             1 
     56 setal[Bence,19]
                     *              0             0             1 
     57 setal[Csabi,19]
-                    *              0             0             1 
+                    *              1             0             1 
     58 setal[Anna,20]
                     *              0             0             1 
     59 setal[Bence,20]
-                    *              0             0             1 
+                    *              1             0             1 
     60 setal[Csabi,20]
-                    *              1             0             1 
-    61 setal[Anna,21]
-                    *              1             0             1 
-    62 setal[Bence,21]
                     *              0             0             1 
+    61 setal[Anna,21]
+                    *              0             0             1 
+    62 setal[Bence,21]
+                    *              1             0             1 
     63 setal[Csabi,21]
                     *              0             0             1 
     64 setal[Anna,22]
                     *              0             0             1 
     65 setal[Bence,22]
-                    *              0             0             1 
-    66 setal[Csabi,22]
                     *              1             0             1 
+    66 setal[Csabi,22]
+                    *              0             0             1 
     67 setal[Anna,23]
                     *              1             0             1 
     68 setal[Bence,23]
@@ -234,11 +290,11 @@ Objective:  OsszesenIdo = 4712.2 (MINimum)
     78 setal[Csabi,26]
                     *              1             0             1 
     79 setal[Anna,27]
-                    *              0             0             1 
+                    *              1             0             1 
     80 setal[Bence,27]
                     *              0             0             1 
     81 setal[Csabi,27]
-                    *              1             0             1 
+                    *              0             0             1 
 
 Integer feasibility conditions:
 
@@ -246,8 +302,8 @@ KKT.PE: max.abs.err = 0.00e+00 on row 0
         max.rel.err = 0.00e+00 on row 0
         High quality
 
-KKT.PB: max.abs.err = 1.14e-13 on row 28
-        max.rel.err = 1.89e-16 on row 28
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
         High quality
 
 End of output
